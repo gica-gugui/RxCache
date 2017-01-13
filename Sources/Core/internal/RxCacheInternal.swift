@@ -65,7 +65,7 @@ extension RxCache {
                     return Observable.just(Reply(source: record!.source, cacheables: record!.cacheables))
                 }
                 
-                return Observable.error(NSError(domain: Locale.NotDataReturnWhenCallingObservableLoader + " " + provider.providerKey, code: 0, userInfo: nil))
+                return Observable.error(NSError(domain: Locale.NotDataReturnWhenCallingObservableLoader + " " + provider.providerKey, code: 0, userInfo: ["parentError": errorType]))
             })
     }
     
