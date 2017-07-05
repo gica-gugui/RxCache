@@ -21,12 +21,6 @@ Pod::Spec.new do |s|
     ss.dependency "RxSwift", ">= 3.0.0-beta.1"
   end
 
-  s.subspec "AppExtension" do |ss|
-    ss.source_files = 'Sources/Core/**/*'
-    ss.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'RxCache.APP_EXTENSIONS=1' }
-    ss.dependency "RxSwift", ">= 3.0.0-beta.1"
-  end
-
   s.subspec "ObjectMapper" do |ss|
     ss.source_files = 'Sources/Cacheables/ObjectMapper/*.swift'
     ss.dependency "RxCache/Core"
